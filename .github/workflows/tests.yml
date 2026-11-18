@@ -23,6 +23,7 @@ on:
 
 jobs:
   unittest:
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'pull_request' || github.repository_owner == 'anyvm-org'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
